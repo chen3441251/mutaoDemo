@@ -1,15 +1,15 @@
-/**
- nav_site 
- */
+/* nav_site */
+
  .nav_site{
      width: 100%;
      background-color: #f3f5f7;
  }
- .nav_site.container{
+ .nav_site .container{
      height: 44px;
      line-height: 44px;
-     border-bottom: 1px solid #cdd04d;
+     border-bottom: 1px solid   #cdd0d4;
  }
+ /* nav_site_left */
  .nav_site_login{
      margin-left: 15px;
      color: #f01414;
@@ -19,3 +19,70 @@
  .nav_site_signup{
     margin-left: 10px;
  }
+ /* nav_site_right */
+
+.dropdown{
+    position: relative;
+}
+.dropdown_toggle{
+    position: relative;
+    z-index: 2;
+    display: block;
+    height: 100%  ;
+    padding: 0 16px 0 12px;
+    border-left:1px solid #f3f5f7;
+    border-right: 1px solid #f3f5f7;
+}
+.dropdown_arrow{
+    display: inline-block;
+    width: 8px;
+    height: 6px;
+    background: url(../img/dropdown-arrow.png) no-repeat;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.dropdown_layer{
+    z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    top: 43px;
+    border:1px solid #cdd0d4;
+
+}
+.dropdown_left{
+    left: 0;
+    right: auto;
+}
+.dropdown_right{
+    left: auto;
+    right: 0;
+}
+.dropdown_item{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    color: #4d555d;
+    white-space: nowrap;
+    padding: 0 12px;
+}
+.dropdown_item:hover{
+    background-color: #f3f5f7;
+}
+.nav_site_category{
+    margin: 0 10px;
+}
+.nav_site_service{
+    margin-right: 15px;
+}
+/* 动态的dropdown-active */
+.dropdown_active .dropdown_toggle{
+    background-color: #fff;
+    border-color: #cdd0d4;
+}
+.dropdown_active .dropdown_arrow{
+    background-image: url(../img/dropdown-arrow-active.png);
+}
+.dropdown_active .dropdown_layer{
+    display: block;
+}
