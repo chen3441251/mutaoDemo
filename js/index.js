@@ -15,8 +15,9 @@
 //     /* 下拉菜单显示 */
 //     $dropdown.find('.dropdown_layer').hide();
 // })
-$('.dropdown').hover(function(){
-    $(this).addClass('dropdown_active');
-},function(){
-    $(this).removeClass('dropdown_active');
-});
+
+// $('.dropdown').hover(function(){
+//     $(this).addClass('dropdown_active');
+// },function(){
+//     $(this).removeClass('dropdown_active');
+// });

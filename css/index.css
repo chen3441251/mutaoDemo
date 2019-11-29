@@ -76,13 +76,19 @@
     margin-right: 15px;
 }
 /* 动态的dropdown-active */
-.dropdown_active .dropdown_toggle{
+.dropdown_active .dropdown_toggle,
+.dropdown:hover .dropdown_toggle
+{
     background-color: #fff;
     border-color: #cdd0d4;
 }
-.dropdown_active .dropdown_arrow{
+.dropdown_active .dropdown_arrow,
+.dropdown:hover .dropdown_arrow
+{
     background-image: url(../img/dropdown-arrow-active.png);
 }
-.dropdown_active .dropdown_layer{
+.dropdown_active .dropdown_layer,
+.dropdown:hover .dropdown_layer
+{
     display: block;
 }
