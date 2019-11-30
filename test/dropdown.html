@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下拉菜单单元</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+    .dropdown{
+    position: relative;
+}
+.dropdown_toggle{
+    position: relative;
+    z-index: 2;
+}
+.dropdown_arrow{
+    display: inline-block;
+    background-repeat:  no-repeat;
+}
+.dropdown_layer{
+    z-index: 1;
+    display: none;
+    position: absolute;
+}
+.dropdown_left{
+    left: 0;
+    right: auto;
+}
+.dropdown_right{
+    left: auto;
+    right: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <!-- 切换按钮+下拉箭头 -->
+        <div href="#" class="dropdown_toggle">我的慕淘 <i class="dropdown_arrow"></i></div>
+        <!-- 下拉菜单 -->
+        <div class="dropdown_layer dropdown_left">
+        </div>
+    </div>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</body>
+</html>
