@@ -1,7 +1,8 @@
 var slient={
     init:function($element){
+        $element.addClass('translation');
         if($element.is(':hidden')){//隐藏状态
-            $element.data('status','hidden');    
+            $element.data('status','hidden');  
         }else{//显示状态
             $element.data('status','shown');
         }
@@ -27,41 +28,40 @@ var css3={
     //淡入淡出
     fade:{
         init:function($element){
+            $element.addClass('translation')
             if($element.is(':hidden')){//隐藏状态
-                $element.data('status','hidden');    
+                $element.data('status','hidden');  
+                $element.addClass('fadeOut');  
             }else{//显示状态
                 $element.data('status','shown');
+                $element.removeClass('fadeOut');  
             }
         },
         show:function($element){
-            console.log('showbefore'+$element.data('status'));
             //防止重复点击
             if($element.data('status')==='show')return;
             if($element.data('status')==='shown')return;
         //通过发布订阅
         $element.data('status','show').trigger('show');
-            $element.one('transitionend',function(){
+            $element.off('transitionend').one('transitionend',function(){
                 $element.data('status','shown').trigger('shown');
             });
             $element.show();
             setTimeout(function(){
                 $element.removeClass('fadeOut');
             },20);
-            console.log('showafter'+$element.data('status'));
         },
         hide:function($element){
-            console.log('hidebefore'+$element.data('status'));
             //防止重复点击
             if($element.data('status')==='hide')return;
             if($element.data('status')==='hidden')return;
             $element.data('status','hide').trigger('hide');
-            $element.one('transitionend',function(){
+            $element.off('transitionend').one('transitionend',function(){
                 $element.hide();
                 $element.data('status','hidden').trigger('hidden');
             });
            
             $element.addClass('fadeOut');
-            console.log('hideafter'+$element.data('status'));
         }
     },
     //上下卷帘
@@ -101,23 +101,23 @@ var css3={
         }
     }
    }
-   var js={
+var js={
     //淡入淡出
     fade:{
-        show:function(){
-
+        show:function($element){
+            $element.fadeIn();
         },
-        hide:function(){
-
+        hide:function($element){
+            $element.fadeOut();
         }
     },
     //上下卷帘
     slideUpDown:{
-        show:function(){
-
+        show:function($element){
+            $element.slideDown();
             },
-            hide:function(){
-
+            hide:function($element){
+                $element.slideUp();
             }
     },
     //左右卷帘

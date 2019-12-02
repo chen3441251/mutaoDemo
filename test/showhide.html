@@ -33,7 +33,7 @@
 <body>
 
     <button id="btn_show">显示</button><button id="btn_hide">隐藏</button>
-    <div id="box" class="translation"></div>
+    <div id="box" ></div>
      <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
      <script src="../js/showhide.js"></script>
      <script>
@@ -43,9 +43,9 @@
    var $box=$('#box');
 
    //初始化状态
-   css3.fade.init($box);
+  // js.fade.init($box);
      $('#btn_show').on('click',function(){
-        css3.fade.show($box);
+        js.slideUpDown.show($box);
      });
      //小A
      $box.on('show shown',function(e){
@@ -70,7 +70,7 @@
         }
      })
      $('#btn_hide').on('click',function(){
-        css3.fade.hide($box);
+        js.slideUpDown.hide($box);
      });
 
      </script>
