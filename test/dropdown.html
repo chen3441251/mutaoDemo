@@ -32,17 +32,124 @@
     left: auto;
     right: 0;
 }
+/* menu独有的样式 */
+.menu .dropdown_toggle{
+   
+    height: 100%  ;
+    padding: 0 16px 0 12px;
+    border-left:1px solid #f3f5f7;
+    border-right: 1px solid #f3f5f7;
+}
+.menu .dropdown_arrow{
+  
+    width: 8px;
+    height: 6px;
+    background-image: url(../img/dropdown-arrow.png);
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.menu .dropdown_layer{
+    background-color: #fff;
+    top: 100%;
+    border:1px solid #cdd0d4;
 
+}
+.menu .dropdown_left{
+    left: 0;
+    right: auto;
+}
+.menu .dropdown_right{
+    left: auto;
+    right: 0;
+}
+.menu .menu_item{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    color: #4d555d;
+    white-space: nowrap;
+    padding: 0 12px;
+}
+.menu .menu_item:hover{
+    background-color: #f3f5f7;
+}
+/* 动态的dropdown-active */
+.menu_active .dropdown_toggle
+{
+    background-color: #fff;
+    border-color: #cdd0d4;
+}
+.menu_active .dropdown_arrow
+{
+    background-image: url(../img/dropdown-arrow-active.png);
+}
+.menu_active .dropdown_layer
+{
+    display: block;
+}
     </style>
 </head>
 <body>
-    <div class="dropdown">
-        <!-- 切换按钮+下拉箭头 -->
+    <!-- <div class=" dropdown">
         <div href="#" class="dropdown_toggle">我的慕淘 <i class="dropdown_arrow"></i></div>
-        <!-- 下拉菜单 -->
         <div class="dropdown_layer dropdown_left">
         </div>
-    </div>
+    </div> -->
+    <!-- 我的慕淘 -->
+    <div class="fl menu dropdown" data-active="menu">
+            <!-- 切换按钮+下拉箭头 -->
+            <div href="#" class="dropdown_toggle link">我的慕淘 <i class="dropdown_arrow"></i></div>
+            <!-- 下拉菜单 -->
+            <ul class="dropdown_layer dropdown_left">
+                <li><a href="#" target="_blank" class="menu_item">已买到宝贝</a></li>
+                <li><a href="#" target="_blank" class="menu_item">我的足迹</a></li>
+            </ul>
+        </div>
+        <div class="fl menu dropdown" data-active="menu">
+                <!-- 切换按钮+下拉箭头 -->
+                <div href="#" class="dropdown_toggle link">我的慕淘 <i class="dropdown_arrow"></i></div>
+                <!-- 下拉菜单 -->
+                <ul class="dropdown_layer dropdown_left">
+                    <li><a href="#" target="_blank" class="menu_item">已买到宝贝</a></li>
+                    <li><a href="#" target="_blank" class="menu_item">我的足迹</a></li>
+                </ul>
+            </div>
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <script>
+//      $('.dropdown').hover(function(){
+//          var $this=$(this);
+//          $this.addClass($this.data('active')+"_active");
+//  },function(){
+//     var $this=$(this);
+//     $this.removeClass($this.data('active')+"_active");
+//  });
+//  function dropdown(element){
+//     var $element=$(element);
+//    var dropdown_active= $element.data('active')+'_active'
+//     $element.hover(function(){
+//                  var $this=$(this);
+//                  $this.addClass(dropdown_active);
+//             },function(){
+//                  var $this=$(this);
+//              $this.removeClass(dropdown_active);
+//                      });
+//          }
+//         // dropdown($('.dropdown')[0]);
+//          /* 
+//          JQ插件使用
+//          由于.dropdown可能有多个，需要使用遍历方式来执行逻辑
+//          */
+//          $.fn.extend({
+//              dropdown:function(){
+//                  return this.each(function(){
+//                      //此this非上面的this
+//                      dropdown(this);
+//                  })
+//              }
+//          })
+         
+         $('.dropdown').dropdown();
+    </script>
 </body>
 </html>

@@ -21,3 +21,4 @@
 // },function(){
 //     $(this).removeClass('dropdown_active');
 // });
+$('.dropdown').dropdown();

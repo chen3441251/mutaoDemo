@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>显示隐藏</title>
+    <link rel="stylesheet" href="../css/base.css"> 
+    <style>
+        body{
+            width: 400px;
+            margin: 0 auto;
+        }
+        button{
+            width: 50%;
+            height: 30px;
+        }
+        #box{
+            
+            height: 200px;
+            width: 100%;
+            background-color: red;
+        }
+        .translation{
+            transition: 1s all;
+        }
+        .fadeOut{
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="btn_show">显示</button><button id="btn_hide">隐藏</button>
+    <div id="box" class="translation"></div>
+     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+     <script src="../js/showhide.js"></script>
+     <script>
+
+     
+   
+   var $box=$('#box');
+
+   //初始化状态
+   css3.fade.init($box);
+     $('#btn_show').on('click',function(){
+        css3.fade.show($box);
+     });
+     //小A
+     $box.on('show shown',function(e){
+         console.log(e.type);
+         if(e.type==='show'){
+            $box.html('<p>我要准备显示了</p>'); 
+         }else if(e.type==='shown'){
+            setTimeout(function(){
+                $box.html($box.html()+'<p>我已经显示了</p>');
+            },1000);
+        }
+     })
+     //小C
+     $box.on('show shown hide hidden',function(e){
+         //console.log(e.type);
+         if(e.type==='show'){
+            $box.css({'background':'yellow'}); 
+         }else if(e.type==='shown'){
+             setTimeout(function(){
+                $box.css({'background':''}); 
+             },1000);
+        }
+     })
+     $('#btn_hide').on('click',function(){
+        css3.fade.hide($box);
+     });
+
+     </script>
+</body>
+</html>

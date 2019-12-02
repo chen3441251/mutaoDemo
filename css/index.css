@@ -20,8 +20,14 @@
     margin-left: 10px;
  }
  /* nav_site_right */
+ .nav_site_category{
+    margin: 0 10px;
+}
+.nav_site_service{
+    margin-right: 15px;
+}
 
-.dropdown{
+/* .dropdown{
     position: relative;
 }
 .dropdown_toggle{
@@ -69,13 +75,8 @@
 .dropdown_item:hover{
     background-color: #f3f5f7;
 }
-.nav_site_category{
-    margin: 0 10px;
-}
-.nav_site_service{
-    margin-right: 15px;
-}
-/* 动态的dropdown-active */
+
+
 .dropdown_active .dropdown_toggle,
 .dropdown:hover .dropdown_toggle
 {
@@ -91,4 +92,4 @@
 .dropdown:hover .dropdown_layer
 {
     display: block;
-}
+} */
